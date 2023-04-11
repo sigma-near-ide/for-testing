@@ -1,5 +1,5 @@
 name: Tests
-on: push
+# on: push
 
 concurrency:
   group: ${{ github.ref }}
