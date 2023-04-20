@@ -4,7 +4,7 @@
   "license": "(MIT AND Apache-2.0)",
   "type": "module",
   "scripts": {
-    "build": "./build.sh",
+    "build": "near-sdk-js build src/contract.ts build/contract.wasm",
     "deploy": "./deploy.sh",
     "test": "echo no unit testing"
   },
