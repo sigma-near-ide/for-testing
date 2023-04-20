@@ -31,7 +31,14 @@ jobs:
           cd frontend
           npm run build
 
-      - name: Deploy 🚀
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Frontend
+          path: frontend/dist/
+          if-no-files-found: error
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: frontend/dist
