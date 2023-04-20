@@ -1,3 +1,4 @@
+# Run current workflow once (it will create gh-pages branch)
 # Configure GitHub Pages:
 #  - Settings > Pages
 #  - Build amd deployment:
