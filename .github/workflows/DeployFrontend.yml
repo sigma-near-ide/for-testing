@@ -1,11 +1,17 @@
-name: Build Frontend
+# Run current workflow once (it will create gh-pages branch)
+# Configure GitHub Pages:
+#  - Settings > Pages
+#  - Build amd deployment:
+#     * Source: "Deploy from a branch"
+#     * Branch: "gh-pages" "/(root)"
+name: Deploy Frontend
 concurrency: build-frontend-${{ github.ref }}
 on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -29,3 +35,8 @@ jobs:
         run: |
           cd frontend
           npm run build
+
+      - name: Publish to gh-pages Branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: frontend/dist

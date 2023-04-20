@@ -5,7 +5,7 @@
         "workflowName": "Build Frontend"
       },
       "deploy": {
-        "workflowName": "pages-build-deployment",
+        "workflowName": "Deploy Frontend",
         "siteUrl": "https://sigma-near-ide.github.io/for-testing/"
       }
     }
