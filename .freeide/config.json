@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Frontend": {
+      "build": {
+        "workflowName": "Build Frontend"
+      },
+      "deploy": {
+        "workflowName": "pages-build-deployment",
+        "siteUrl": "https://sigma-near-ide.github.io/for-testing/"
+      }
+    }
+  }
+}

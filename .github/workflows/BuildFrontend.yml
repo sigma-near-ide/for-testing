@@ -1,12 +1,16 @@
-name: Deploy Frontend
-concurrency: deploy-frontend-${{ github.ref }}
+# Configure GitHub Pages:
+#  - Settings > Pages
+#  - Build amd deployment:
+#     * Source: "Deploy from a branch"
+#     * Branch: "gh-pages" "/(root)"
+name: Build Frontend
+concurrency: build-frontend-${{ github.ref }}
 on:
-  # Run workflow manually
   workflow_dispatch:
 
 jobs:
-  deploy:
-    name: Deploy
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -31,14 +35,7 @@ jobs:
           cd frontend
           npm run build
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Frontend
-          path: frontend/dist/
-          if-no-files-found: error
-
-      - name: Deploy to GitHub Pages
+      - name: Publish to gh-pages Branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: frontend/dist
