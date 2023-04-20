@@ -11,12 +11,14 @@
     "cypress:open": "cypress open --browser chromium --config-file cypress/cypres.config.js"
   },
   "devDependencies": {
+    "buffer": "^5.7.1",
     "cypress": "^11.2.0",
     "env-cmd": "^10.1.0",
     "events": "^3.3.0",
     "nodemon": "^2.0.16",
     "parcel": "^2.7.0",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "util": "^0.12.5"
   },
   "dependencies": {
     "@near-wallet-selector/core": "^7.0.0",

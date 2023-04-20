@@ -1,0 +1,35 @@
+name: Deploy Frontend
+concurrency: deploy-frontend-${{ github.ref }}
+on:
+  # Run workflow manually
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - run: |
+          cd frontend
+          npm ci
+        shell: bash
+
+      - name: Build
+        run: |
+          cd frontend
+          npm run Build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: frontend/dist
