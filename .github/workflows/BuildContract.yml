@@ -33,6 +33,5 @@ jobs:
       - name: Publish
         uses: actions/upload-artifact@v3
         with:
-          name: Contract
           path: contract/build/contract.wasm
           if-no-files-found: error
