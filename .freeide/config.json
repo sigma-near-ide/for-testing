@@ -1,0 +1,21 @@
+{
+  "profiles": {
+    "Contract": {
+      "build": {
+        "workflowName": "Build Contract"
+      },
+      "deploy": {
+        "artifactName": "Contract"
+      }
+    },
+    "Frontend": {
+      "build": {
+        "workflowName": "Build Frontend"
+      },
+      "deploy": {
+        "workflowName": "Deploy Frontend",
+        "siteUrl": "https://sigma-near-ide.github.io/for-testing/"
+      }
+    }
+  }
+}
