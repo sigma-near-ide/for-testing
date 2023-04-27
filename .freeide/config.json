@@ -1,11 +1,14 @@
 {
   "profiles": {
-    "Contract": {
+    "Contract1": {
+      "type": "Contract",
       "build": {
         "fileName": "BuildContract.yml"
-      }
+      },
+      "deploy": {}
     },
     "Frontend": {
+      "type": "Frontend",
       "build": {
         "fileName": "BuildFrontend.yml"
       },
